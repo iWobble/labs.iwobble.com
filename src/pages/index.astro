@@ -1,0 +1,167 @@
+---
+import '../styles/global.css';
+
+const labItems = [
+  {
+    title: 'Experiments',
+    text: 'Small tests, unfinished questions, half-built ideas, and the notes that keep them moving.',
+    meta: 'messy by design'
+  },
+  {
+    title: 'Projects',
+    text: 'Things that are real enough to track: tools, templates, workflows, prototypes, and early products.',
+    meta: 'build log'
+  },
+  {
+    title: 'Playbooks',
+    text: 'Reusable patterns, operating notes, architecture references, and practical guides worth keeping.',
+    meta: 'docs + process'
+  },
+  {
+    title: 'Workspaces',
+    text: 'Private collaboration areas for client work, handoff notes, prototypes, and shared deliverables.',
+    meta: 'invite only'
+  }
+];
+
+const current = [
+  'AI workflow toolkit',
+  'Open source utilities',
+  'Automation experiments',
+  'InnerOpen patterns',
+  'LowBurn pipelines'
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>iWobble Labs — Experiments, Projects, Playbooks</title>
+    <meta name="description" content="The lab side of iWobble: experiments, prototypes, open source, playbooks, technical notes, and workspaces." />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="iWobble Labs home">
+          <img src="/iwobble-logo.gif" alt="iWobble" />
+          <span>LABS</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#experiments">Experiments</a>
+          <a href="#projects">Projects</a>
+          <a href="#playbooks">Playbooks</a>
+          <a href="#workspaces">Workspaces</a>
+        </nav>
+        <a class="ghost-button" href="https://github.com/iWobble">GitHub <span>↗</span></a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">labs.iwobble.com</p>
+            <h1>
+              <span><b>I</b> explore.</span>
+              <span><b>I</b> build.</span>
+              <em>iWobble Labs</em>
+            </h1>
+            <p class="intro">
+              This is the working side of iWobble: a place for prototypes, open source, playbooks, automation, client workspaces, and ideas before they become something more.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#projects">See What’s in the Lab <span>→</span></a>
+              <a class="secondary-button" href="https://iwobble.com">Back to iWobble <span>↗</span></a>
+            </div>
+          </div>
+
+          <div class="terminal-card" aria-label="Lab index preview">
+            <div class="terminal-top"><span></span><span></span><span></span></div>
+            <pre><code>$ iwobble labs
+├─ experiments
+│  ├─ ideas
+│  ├─ prototypes
+│  └─ weird useful things
+├─ projects
+│  ├─ inneropen
+│  ├─ lowburn-studio
+│  └─ tools-in-progress
+├─ playbooks
+│  ├─ automation
+│  ├─ infrastructure
+│  └─ handoff-notes
+└─ workspaces
+   └─ private-by-default
+
+> build, learn, ship, repeat._</code></pre>
+          </div>
+        </section>
+
+        <section class="section" id="experiments">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">What lives here</p>
+              <h2>A landing pad for the workbench.</h2>
+            </div>
+            <p>
+              The main iWobble site is the umbrella. Labs is the bench: less polished, more useful, and close to the actual making.
+            </p>
+          </div>
+
+          <div class="lab-grid">
+            {labItems.map((item) => (
+              <article class="lab-card">
+                <span>{item.meta}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <a href="#">Open soon →</a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="build-strip" id="projects">
+          <div>
+            <p class="eyebrow">Temporary signal</p>
+            <h2>We’re setting up the shelves.</h2>
+            <p>
+              This page is intentionally simple for now. Repos, playbooks, notes, and private workspaces will show up here as they become useful enough to share.
+            </p>
+          </div>
+          <div class="pill-stack">
+            {current.map((item) => <span>{item}</span>)}
+          </div>
+        </section>
+
+        <section class="section two-column" id="playbooks">
+          <div class="panel">
+            <p class="eyebrow">Playbooks</p>
+            <h2>Notes that become reusable.</h2>
+            <p>
+              Not everything needs to become a product. Some things become checklists, diagrams, handoff docs, snippets, standards, and patterns worth using again.
+            </p>
+          </div>
+          <div class="panel" id="workspaces">
+            <p class="eyebrow">Workspaces</p>
+            <h2>Private by default.</h2>
+            <p>
+              Client and collaboration work belongs in controlled spaces. Labs can point to those spaces without turning private work into public marketing.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-brand">
+          <img src="/iwobble-logo.gif" alt="iWobble" />
+          <span>© 2026 iWobble Labs, LLC</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://iwobble.com">iWobble</a>
+          <a href="https://github.com/iWobble">GitHub</a>
+          <a href="mailto:hello@iwobble.com">Contact</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
